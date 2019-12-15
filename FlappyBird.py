@@ -1,5 +1,6 @@
 import pygame
 from modules.settings import *
+from modules.pipe import PipeCollection
 
 def update_label(data, title, font, x, y, gameDisplay):
     label = font.render('{} {}'.format(title, data), 1, DATA_FONT_COLOR)
@@ -29,6 +30,11 @@ def run_game():
 
     pygame.display.set_caption('Learn to fly')
 
+    #Create Pipes
+    pipes = PipeCollection(gameDisplay)
+    pipes.create_new_set()
+
+
     bgImg = pygame.image.load(BG_NIGHT_FILENAME if isNight else BG_DAY_FILENAME) #Load background day or night
     bgImg = pygame.transform.scale(bgImg, (DISPLAY_W, DISPLAY_H))
     
@@ -53,6 +59,8 @@ def run_game():
                 running = False        
             elif event.type == pygame.KEYDOWN:
                 running = False
+
+        pipes.update(dt)
 
         neuralDisplay.blit(bgNeural,(DISPLAY_W,0))
 

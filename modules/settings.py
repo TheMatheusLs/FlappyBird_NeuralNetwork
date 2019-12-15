@@ -30,3 +30,20 @@ BIRD_YELLOW = (
         "./resources/yellowbird-upflap.png",
         "./resources/yellowbird-midflap.png",
         "./resources/yellowbird-downflap.png")
+
+#Pipe const
+PIPE_SPEED = 70/1000
+PIPE_DONE = 1
+PIPE_MOVING = 0
+PIPE_UPPER = 1
+PIPE_LOWER = 0
+
+PIPE_W = 50
+PIPE_H = 500
+
+PIPE_ADD_GAP = 200
+PIPE_MIN = 50
+PIPE_MAX = 500
+PIPE_START_X = DISPLAY_W
+PIPE_GAP_SIZE = 160
+PIPE_FIRST = 800
