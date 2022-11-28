@@ -1,6 +1,5 @@
 import pygame
 import random
-import numpy as np
 from modules.settings import *
 
 class Bird():
